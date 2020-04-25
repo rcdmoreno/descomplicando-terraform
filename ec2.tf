@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Hello World ${count.index}"
+    Name = "Hello World - ${count.index}"
   }
 }
 
