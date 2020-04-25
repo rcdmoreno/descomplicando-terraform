@@ -11,10 +11,11 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
+  count         = 2
   instance_type = "t2.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "Hello World ${count.index}"
   }
 }
 
